@@ -3,311 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EduPath Hub | การศึกษาต่อสำหรับทุกวัย</title>
+<title>EduPath Hub</title>
+
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-scroll-behavior:smooth;
-}
 body{
-background:#f4f7ff;
-color:#333;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6ff;
+    color:#333;
 }
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-padding:15px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-z-index:1000;
+
+header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
 }
-.logo{
-font-size:24px;
-font-weight:bold;
-color:#2563eb;
+
+header h1{
+    margin:0;
+    font-size:3rem;
 }
-nav ul{
-display:flex;
-list-style:none;
-gap:20px;
+
+header p{
+    font-size:1.2rem;
 }
-nav a{
-text-decoration:none;
-color:#333;
-font-weight:500;
-}
-.hero{
-height:100vh;
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-color:white;
-}
-.hero-content h1{
-font-size:60px;
-margin-bottom:20px;
-}
-.hero-content p{
-font-size:20px;
-max-width:700px;
-margin:auto;
-}
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:15px 35px;
-background:white;
-color:#2563eb;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
-transition:0.3s;
-}
-.btn:hover{
-transform:translateY(-3px);
-}
+
 section{
-padding:100px 10%;
+    max-width:1000px;
+    margin:auto;
+    padding:50px 20px;
 }
-.section-title{
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-color:#2563eb;
+
+h2{
+    color:#2563eb;
 }
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 }
+
 .card{
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-transition:.3s;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
-.card:hover{
-transform:translateY(-10px);
-}
-.card h3{
-margin-bottom:10px;
-color:#7c3aed;
-}
+
 .quiz{
-max-width:700px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
-.quiz select{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:10px;
+
+select,button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
 }
-.quiz button{
-width:100%;
-padding:15px;
-background:#2563eb;
-color:white;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-size:16px;
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    cursor:pointer;
 }
-.result{
-margin-top:20px;
-font-size:20px;
-font-weight:bold;
-text-align:center;
+
+button:hover{
+    opacity:0.9;
 }
-table{
-width:100%;
-background:white;
-border-collapse:collapse;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+#result{
+    margin-top:15px;
+    font-weight:bold;
 }
-th{
-background:#2563eb;
-color:white;
-}
-th,td{
-padding:15px;
-text-align:left;
-border-bottom:1px solid #eee;
-}
+
 footer{
-background:#111827;
-color:white;
-text-align:center;
-padding:30px;
-}
-@media(max-width:768px){
-.hero-content h1{
-font-size:40px;
-}
-nav{
-flex-direction:column;
-gap:10px;
-}
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 </style>
 </head>
+
 <body>
-<nav>
-<div class="logo">🎓 EduPath Hub</div>
-<ul>
-<li><a href="#about">เกี่ยวกับ</a></li>
-<li><a href="#services">บริการ</a></li>
-<li><a href="#quiz">แบบทดสอบ</a></li>
-<li><a href="#career">อาชีพ</a></li>
-</ul>
-</nav>
-<section class="hero">
-<div class="hero-content">
-<h1>การศึกษาต่อสำหรับทุกวัย</h1>
-<p>
-ค้นหาเส้นทางการศึกษาที่เหมาะกับคุณ
-ไม่ว่าจะเป็นนักเรียน นักศึกษา หรือวัยทำงาน
-</p>
 
-เริ่มต้นค้นหา
+<header>
+    <h1>🎓 EduPath Hub</h1>
+    <p>เว็บไซต์การศึกษาต่อสำหรับนักเรียน นักศึกษา และวัยทำงาน</p>
+</header>
 
-</div>
-</section>
-<section id="about">
-<h2 class="section-title">ทำไมต้อง EduPath Hub?</h2>
-<div class="grid">
-<div class="card">
-<h3>🎓 แนะแนวการศึกษา</h3>
-<p>ค้นหาคณะและสาขาที่ตรงกับความสนใจ</p>
-</div>
-<div class="card">
-<h3>💼 แนะแนวอาชีพ</h3>
-<p>รู้จักอาชีพในอนาคตและทักษะที่ต้องมี</p>
-</div>
-<div class="card">
-<h3>📚 Upskill</h3>
-<p>พัฒนาทักษะใหม่เพื่อเติบโตในสายงาน</p>
-</div>
-<div class="card">
-<h3>🔄 Reskill</h3>
-<p>เปลี่ยนสายอาชีพด้วยการเรียนรู้ใหม่</p>
-</div>
-</div>
-</section>
-<section id="services">
-<h2 class="section-title">บริการของเรา</h2>
-<div class="grid">
-<div class="card">
-<h3>🏫 มหาวิทยาลัย</h3>
-<p>ค้นหามหาวิทยาลัยและหลักสูตรที่สนใจ</p>
-</div>
-<div class="card">
-<h3>💻 คอร์สออนไลน์</h3>
-<p>รวมคอร์สพัฒนาทักษะยอดนิยม</p>
-</div>
-<div class="card">
-<h3>🤖 AI Guidance</h3>
-<p>ระบบแนะนำเส้นทางการเรียนเบื้องต้น</p>
-</div>
-<div class="card">
-<h3>📈 Career Path</h3>
-<p>วางแผนอาชีพและเป้าหมายในอนาคต</p>
-</div>
-</div>
-</section>
-<section id="quiz">
-<h2 class="section-title">แบบทดสอบค้นหาตัวเอง</h2>
-<div class="quiz">
-<select id="interest">
-<option value="">เลือกความสนใจของคุณ</option>
-<option value="science">วิทยาศาสตร์</option>
-<option value="technology">เทคโนโลยี</option>
-<option value="business">ธุรกิจ</option>
-<option value="art">ศิลปะและการออกแบบ</option>
-</select>
+<section>
+    <h2>บริการของเรา</h2>
 
-ดูผลลัพธ์
+    <div class="cards">
+        <div class="card">
+            <h3>🎓 แนะแนวคณะ</h3>
+            <p>ค้นหาคณะที่เหมาะกับความสนใจของคุณ</p>
+        </div>
 
-<div class="result" id="result"></div>
-</div>
+        <div class="card">
+            <h3>💼 แนะแนวอาชีพ</h3>
+            <p>สำรวจอาชีพและทักษะที่ตลาดต้องการ</p>
+        </div>
+
+        <div class="card">
+            <h3>📚 Upskill</h3>
+            <p>เรียนรู้ทักษะใหม่เพื่อพัฒนาตนเอง</p>
+        </div>
+
+        <div class="card">
+            <h3>🔄 Reskill</h3>
+            <p>เปลี่ยนสายงานด้วยการเรียนรู้เพิ่มเติม</p>
+        </div>
+    </div>
 </section>
-<section id="career">
-<h2 class="section-title">อาชีพยอดนิยม</h2>
-<table>
-<tr>
-<th>อาชีพ</th>
-<th>เงินเดือนเริ่มต้น</th>
-</tr>
-<tr>
-<td>Software Developer</td>
-<td>25,000 - 50,000 บาท</td>
-</tr>
-<tr>
-<td>Data Analyst</td>
-<td>25,000 - 40,000 บาท</td>
-</tr>
-<tr>
-<td>Digital Marketing</td>
-<td>18,000 - 35,000 บาท</td>
-</tr>
-<tr>
-<td>UX/UI Designer</td>
-<td>20,000 - 35,000 บาท</td>
-</tr>
-</table>
+
+<section>
+    <h2>แบบทดสอบค้นหาตัวเอง</h2>
+
+    <div class="quiz">
+
+        <select id="interest">
+            <option value="">เลือกความสนใจ</option>
+            <option value="science">วิทยาศาสตร์</option>
+            <option value="technology">เทคโนโลยี</option>
+            <option value="business">ธุรกิจ</option>
+            <option value="art">ศิลปะและการออกแบบ</option>
+        </select>
+
+        <button onclick="showResult()">ดูผลลัพธ์</button>
+
+        <div id="result"></div>
+
+    </div>
 </section>
+
+<section>
+    <h2>อาชีพยอดนิยม</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Software Developer</h3>
+            <p>25,000 - 50,000 บาท</p>
+        </div>
+
+        <div class="card">
+            <h3>Data Analyst</h3>
+            <p>25,000 - 40,000 บาท</p>
+        </div>
+
+        <div class="card">
+            <h3>UX/UI Designer</h3>
+            <p>20,000 - 35,000 บาท</p>
+        </div>
+
+        <div class="card">
+            <h3>Digital Marketing</h3>
+            <p>18,000 - 35,000 บาท</p>
+        </div>
+
+    </div>
+</section>
+
 <footer>
-<p>© 2026 EduPath Hub | เว็บไซต์การศึกษาต่อสำหรับทุกวัย</p>
+    <p>© 2026 EduPath Hub</p>
 </footer>
+
 <script>
-function recommendCareer(){
-let interest =
-document.getElementById("interest").value;
-let result =
-document.getElementById("result");
-if(interest==="science"){
-result.innerHTML =
-"🩺 เหมาะกับ: แพทยศาสตร์ พยาบาล เทคนิคการแพทย์ และวิทยาศาสตร์สุขภาพ";
-}
-else if(interest==="technology"){
-result.innerHTML =
-"💻 เหมาะกับ: วิทยาการคอมพิวเตอร์ AI วิศวกรรมซอฟต์แวร์";
-}
-else if(interest==="business"){
-result.innerHTML =
-"📈 เหมาะกับ: บริหารธุรกิจ การตลาด การเงิน และผู้ประกอบการ";
-}
-else if(interest==="art"){
-result.innerHTML =
-"🎨 เหมาะกับ: นิเทศศาสตร์ ดิจิทัลมีเดีย ออกแบบกราฟิก";
-}
-else{
-result.innerHTML =
-"⚠️ กรุณาเลือกความสนใจก่อน";
-}
+function showResult(){
+
+    const value = document.getElementById("interest").value;
+    const result = document.getElementById("result");
+
+    if(value === "science"){
+        result.innerHTML = "🩺 เหมาะกับ: แพทยศาสตร์ พยาบาล เทคนิคการแพทย์";
+    }
+    else if(value === "technology"){
+        result.innerHTML = "💻 เหมาะกับ: วิทยาการคอมพิวเตอร์ AI วิศวกรรมซอฟต์แวร์";
+    }
+    else if(value === "business"){
+        result.innerHTML = "📈 เหมาะกับ: บริหารธุรกิจ การตลาด การเงิน";
+    }
+    else if(value === "art"){
+        result.innerHTML = "🎨 เหมาะกับ: นิเทศศาสตร์ ดิจิทัลมีเดีย ออกแบบกราฟิก";
+    }
+    else{
+        result.innerHTML = "⚠️ กรุณาเลือกความสนใจก่อน";
+    }
 }
 </script>
+
 </body>
 </html>
