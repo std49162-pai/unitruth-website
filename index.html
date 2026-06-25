@@ -3,483 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UniTruth - Real & Data-Driven Guidance</title>
-<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<title>EduPath Hub - การศึกษาต่อสำหรับทุกวัย</title>
+
 <style>
-:root{
-    --primary:#1976D2;
-    --light:#E3F2FD;
-    --white:#FFFFFF;
-    --dark:#263238;
-}
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Sarabun',sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
-html{
-    scroll-behavior:smooth;
-}
+
 body{
-    background:#f8fbff;
-    color:var(--dark);
-    line-height:1.6;
+    background:#f5f7ff;
+    color:#333;
 }
-/* Navbar */
-nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,0.95);
-    backdrop-filter:blur(10px);
-    box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    padding:15px 20px;
+
+header{
+    min-height:100vh;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
-}
-.logo{
-    font-size:1.6rem;
-    font-weight:700;
-    color:var(--primary);
-}
-.nav-links{
-    display:flex;
-    gap:20px;
-}
-.nav-links a{
-    text-decoration:none;
-    color:var(--dark);
-    font-weight:500;
-    transition:.3s;
-}
-.nav-links a:hover{
-    color:var(--primary);
-}
-/* Sections */
-section{
-    padding:80px 20px;
-}
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-h2{
     text-align:center;
-    margin-bottom:20px;
-    color:var(--primary);
-    font-size:2rem;
+    color:white;
+    padding:20px;
 }
-/* Hero */
-.hero{
-    background:linear-gradient(135deg,#E3F2FD,#ffffff);
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
 }
-.hero-content{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-}
-.hero-text h1{
-    font-size:3rem;
-    color:var(--primary);
-}
-.hero-text p{
-    margin:20px 0;
+
+.hero p{
     font-size:1.2rem;
+    max-width:700px;
+    margin:auto;
 }
+
 .btn{
     display:inline-block;
-    background:var(--primary);
-    color:white;
-    padding:12px 24px;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
+    margin-top:25px;
+    padding:12px 25px;
+    background:white;
+    color:#2563eb;
     text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
     transition:.3s;
 }
+
 .btn:hover{
     transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(25,118,210,.3);
 }
-/* Cards */
-.card-grid{
+
+section{
+    padding:80px 10%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2.5rem;
+    color:#2563eb;
+}
+
+.cards{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
-    margin-top:40px;
 }
+
 .card{
     background:white;
     padding:25px;
-    border-radius:18px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
     transition:.3s;
 }
+
 .card:hover{
     transform:translateY(-8px);
 }
+
 .card h3{
-    color:var(--primary);
+    color:#7c3aed;
     margin-bottom:10px;
 }
-/* Analysis */
-.analysis-box{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-}
-.form-card,.result-card{
+
+.quiz{
     background:white;
-    padding:25px;
     border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-input,select{
-    width:100%;
-    padding:12px;
-    margin:10px 0 20px;
-    border:1px solid #ccc;
-    border-radius:10px;
-}
-.result-card{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-.result{
-    font-size:1.2rem;
-    font-weight:600;
-}
-/* Reviews */
-.review-card:hover{
-    box-shadow:0 15px 25px rgba(25,118,210,.2);
-}
-.stars{
-    color:#f4b400;
-    margin:10px 0;
-}
-/* Stats */
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    padding:30px;
+    max-width:700px;
+    margin:auto;
     text-align:center;
 }
-.stat-card{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #ccc;
 }
-.stat-number{
-    font-size:2.5rem;
-    color:var(--primary);
+
+button{
+    padding:12px 25px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+.result{
+    margin-top:20px;
+    font-size:1.2rem;
     font-weight:bold;
 }
-/* Contact */
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-.contact-item{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-    transition:.3s;
-}
-.contact-item:hover{
-    transform:translateY(-5px);
-}
-/* Animation */
-.fade{
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s;
-}
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-/* Back to Top */
-#topBtn{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:50px;
-    height:50px;
-    border:none;
-    border-radius:50%;
-    background:var(--primary);
+
+footer{
+    background:#111827;
     color:white;
-    font-size:20px;
-    cursor:pointer;
-    display:none;
+    text-align:center;
+    padding:30px;
 }
-/* Responsive */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+th,td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+}
+
 @media(max-width:768px){
-.hero-content,
-.analysis-box,
-.card-grid,
-.stats,
-.contact-grid{
-    grid-template-columns:1fr;
-}
-.hero-text h1{
-    font-size:2.2rem;
-}
-.nav-links{
-    gap:10px;
-    font-size:.9rem;
-}
+    .hero h1{
+        font-size:2.5rem;
+    }
 }
 </style>
 </head>
+
 <body>
-<nav>
-<div class="nav-container">
-<div class="logo">UniTruth</div>
-<div class="nav-links">
-<a href="#about">เกี่ยวกับ</a>
-<a href="#analysis">วิเคราะห์</a>
-<a href="#reviews">รีวิว</a>
-<a href="#updates">สถิติ</a>
-<a href="#contact">ติดต่อ</a>
-</div>
-</div>
-</nav>
-<section class="hero">
-<div class="container hero-content">
-<div class="hero-text">
-<h1>UniTruth</h1>
-<p>แนะแนวการเรียนและมหาวิทยาลัยด้วยข้อมูลจริง ไม่ขายฝัน</p>
-<a href="#analysis" class="btn">เริ่มวิเคราะห์คะแนน</a>
-</div>
-<div>
-<img src="https://placehold.co/800x400/E3F2FD/1976D2?text=Education+Guidance"
-style="width:100%;border-radius:20px;">
-</div>
-</div>
-</section>
-<section id="about" class="fade">
-<div class="container">
-<h2>เกี่ยวกับ UniTruth</h2>
-<p style="text-align:center;max-width:800px;margin:auto;">
-แพลตฟอร์มแนะแนวการศึกษาที่ใช้ข้อมูลจริงและการวิเคราะห์เชิงข้อมูล
-ช่วยให้นักเรียนวางแผนการเรียน การสอบ และการยื่นเข้ามหาวิทยาลัยได้อย่างมั่นใจ
+
+<header>
+<div class="hero">
+<h1>🎓 EduPath Hub</h1>
+<p>
+ค้นหาเส้นทางการศึกษาที่ใช่ สำหรับนักเรียน นักศึกษา และวัยทำงาน
+พร้อมข้อมูลคณะ อาชีพ และการพัฒนาทักษะในอนาคต
 </p>
-<div class="card-grid">
+
+<a href="#quiz" class="btn">เริ่มค้นหาเส้นทางของฉัน</a>
+</div>
+</header>
+
+<section>
+<h2 class="title">✨ บริการของเรา</h2>
+
+<div class="cards">
+
 <div class="card">
-<h3>📊 วิเคราะห์คะแนนแบบ Data-Driven</h3>
-<p>ประเมินโอกาสสอบติดจากคะแนนจริงและสถิติย้อนหลัง</p>
+<h3>🎓 แนะแนวคณะ</h3>
+<p>ค้นหาคณะและสาขาที่เหมาะกับความสนใจของคุณ</p>
 </div>
+
 <div class="card">
-<h3>🎓 รีวิวคณะจากรุ่นพี่ตัวจริง</h3>
-<p>เข้าใจชีวิตการเรียนจากประสบการณ์ตรง</p>
+<h3>💼 อาชีพในอนาคต</h3>
+<p>สำรวจสายอาชีพและทักษะที่ตลาดแรงงานต้องการ</p>
 </div>
+
 <div class="card">
-<h3>✅ ข้อมูลอัปเดตและน่าเชื่อถือ</h3>
-<p>รวมข้อมูลคณะ มหาวิทยาลัย และเกณฑ์ล่าสุด</p>
+<h3>📚 Upskill & Reskill</h3>
+<p>แนะนำคอร์สเรียนสำหรับพัฒนาตนเองและเปลี่ยนสายงาน</p>
 </div>
+
+<div class="card">
+<h3>🤖 AI Guidance</h3>
+<p>ระบบช่วยแนะนำเส้นทางการศึกษาจากความสนใจของคุณ</p>
 </div>
+
 </div>
 </section>
-<section id="analysis" class="fade">
-<div class="container">
-<h2>Dashboard วิเคราะห์คะแนน</h2>
-<div class="analysis-box">
-<div class="form-card">
-<label>คะแนนเก็บ</label>
-<input type="number" id="score1" placeholder="0-100">
-<label>คะแนนสอบจำลอง</label>
-<input type="number" id="score2" placeholder="0-100">
-<label>คณะเป้าหมาย</label>
-<select id="faculty">
-<option>วิศวกรรมศาสตร์</option>
-<option>แพทยศาสตร์</option>
-<option>วิทยาศาสตร์</option>
-<option>บริหารธุรกิจ</option>
-<option>ครุศาสตร์</option>
+
+<section id="quiz">
+<h2 class="title">🔍 แบบทดสอบค้นหาตัวเอง</h2>
+
+<div class="quiz">
+
+<select id="interest">
+<option value="">เลือกความสนใจ</option>
+<option value="science">วิทยาศาสตร์</option>
+<option value="business">ธุรกิจ</option>
+<option value="design">ศิลปะและออกแบบ</option>
+<option value="technology">เทคโนโลยี</option>
 </select>
-<button class="btn" onclick="analyze()">วิเคราะห์</button>
-</div>
-<div class="result-card">
-<div id="resultArea">
-<h3>ผลการวิเคราะห์จะแสดงที่นี่</h3>
-</div>
-</div>
-</div>
-<div style="margin-top:40px;background:white;padding:20px;border-radius:20px;box-shadow:0 5px 15px rgba(0,0,0,.08)">
-<canvas id="chanceChart"></canvas>
-</div>
+
+<button onclick="recommend()">ดูผลลัพธ์</button>
+
+<div class="result" id="result"></div>
+
 </div>
 </section>
-<section id="reviews" class="fade">
-<div class="container">
-<h2>Community รีวิวคณะ</h2>
-<div class="card-grid">
-<div class="card review-card">
-<h3>วิศวกรรมศาสตร์</h3>
-<p>งานเยอะ แต่ได้ฝึกคิดแก้ปัญหาและทำโปรเจกต์จริง</p>
-<div class="stars">⭐⭐⭐⭐⭐</div>
-<p><b>อาชีพ:</b> วิศวกร, Data Analyst, Programmer</p>
-</div>
-<div class="card review-card">
-<h3>แพทยศาสตร์</h3>
-<p>ต้องอ่านหนังสือหนัก แต่มีความภูมิใจในการช่วยเหลือผู้คน</p>
-<div class="stars">⭐⭐⭐⭐⭐</div>
-<p><b>อาชีพ:</b> แพทย์, นักวิจัยทางการแพทย์</p>
-</div>
-<div class="card review-card">
-<h3>บริหารธุรกิจ</h3>
-<p>เรียนหลากหลายด้านและต่อยอดธุรกิจได้ดี</p>
-<div class="stars">⭐⭐⭐⭐</div>
-<p><b>อาชีพ:</b> นักการตลาด, ผู้ประกอบการ, HR</p>
-</div>
-</div>
-</div>
+
+<section>
+<h2 class="title">💼 อาชีพยอดนิยม</h2>
+
+<table>
+<tr>
+<th>อาชีพ</th>
+<th>เงินเดือนเริ่มต้น</th>
+</tr>
+
+<tr>
+<td>Software Developer</td>
+<td>25,000 - 50,000 บาท</td>
+</tr>
+
+<tr>
+<td>Data Analyst</td>
+<td>25,000 - 40,000 บาท</td>
+</tr>
+
+<tr>
+<td>UX/UI Designer</td>
+<td>20,000 - 35,000 บาท</td>
+</tr>
+
+<tr>
+<td>Digital Marketing</td>
+<td>18,000 - 35,000 บาท</td>
+</tr>
+
+</table>
 </section>
-<section id="updates" class="fade">
-<div class="container">
-<h2>สถิติและข้อมูลล่าสุด</h2>
-<div class="stats">
-<div class="stat-card">
-<div class="stat-number" data-target="15000">0</div>
-<p>ผู้ใช้งาน</p>
-</div>
-<div class="stat-card">
-<div class="stat-number" data-target="320">0</div>
-<p>คณะที่มีข้อมูล</p>
-</div>
-<div class="stat-card">
-<div class="stat-number" data-target="5600">0</div>
-<p>รีวิวจากรุ่นพี่</p>
-</div>
-</div>
-</div>
-</section>
-<section id="contact" class="fade">
-<div class="container">
-<h2>ติดต่อเรา</h2>
-<div class="contact-grid">
-<div class="contact-item">
-📧 support@unitruth.com
-</div>
-<div class="contact-item">
-📞 02-123-4567
-</div>
-<div class="contact-item">
-📘 Facebook: UniTruth
-</div>
-<div class="contact-item">
-📸 Instagram: @UniTruthTH
-</div>
-</div>
-</div>
-</section>
-<button id="topBtn">↑</button>
-<script>
-// Chart
-const ctx=document.getElementById('chanceChart');
-const chart=new Chart(ctx,{
-type:'doughnut',
-data:{
-labels:['โอกาสสอบติด','ส่วนที่ต้องพัฒนา'],
-datasets:[{
-data:[50,50]
-}]
-},
-options:{
-responsive:true,
-animation:{
-duration:1500
-}
-}
-});
-// Analyze
-function analyze(){
-let score1=parseFloat(document.getElementById('score1').value)||0;
-let score2=parseFloat(document.getElementById('score2').value)||0;
-let chance=Math.min(
-100,
-Math.round((score1*0.4)+(score2*0.6))
-);
-let advice='';
-if(score2<60){
-advice='ควรเพิ่มคะแนนวิชาฟิสิกส์อีก 20 คะแนน';
-}else{
-advice='คะแนนคณิตศาสตร์อยู่ในเกณฑ์ดี';
-}
-document.getElementById('resultArea').innerHTML=`
+
+<section>
+<h2 class="title">📖 สำหรับวัยทำงาน</h2>
+
+<div class="cards">
+
 <div class="card">
-<h3>ผลการวิเคราะห์</h3>
-<p class="result">🎯 โอกาสสอบติด ${chance}%</p>
-<p>${advice}</p>
+<h3>AI Skills</h3>
+<p>เรียนรู้การใช้งาน AI เพื่อเพิ่มประสิทธิภาพการทำงาน</p>
 </div>
-`;
-chart.data.datasets[0].data=[chance,100-chance];
-chart.update();
+
+<div class="card">
+<h3>Data Analysis</h3>
+<p>วิเคราะห์ข้อมูลและสร้างรายงานเชิงธุรกิจ</p>
+</div>
+
+<div class="card">
+<h3>Digital Marketing</h3>
+<p>เพิ่มทักษะด้านการตลาดออนไลน์</p>
+</div>
+
+<div class="card">
+<h3>English for Career</h3>
+<p>พัฒนาทักษะภาษาอังกฤษเพื่อการทำงาน</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 EduPath Hub | การศึกษาต่อสำหรับทุกวัย</p>
+</footer>
+
+<script>
+function recommend(){
+
+let interest =
+document.getElementById("interest").value;
+
+let result =
+document.getElementById("result");
+
+if(interest==="science"){
+result.innerHTML =
+"🩺 แนะนำ: แพทยศาสตร์, พยาบาลศาสตร์, เทคโนโลยีชีวภาพ";
 }
-// Scroll Animation
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('show');
+else if(interest==="business"){
+result.innerHTML =
+"📈 แนะนำ: บริหารธุรกิจ, การตลาด, การเงิน";
 }
-});
-});
-document.querySelectorAll('.fade').forEach(el=>{
-observer.observe(el);
-});
-// Counter Animation
-const counters=document.querySelectorAll('.stat-number');
-const counterObserver=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-const counter=entry.target;
-const target=+counter.dataset.target;
-let count=0;
-const update=()=>{
-count += Math.ceil(target/100);
-if(count<target){
-counter.innerText=count.toLocaleString();
-requestAnimationFrame(update);
-}else{
-counter.innerText=target.toLocaleString();
+else if(interest==="design"){
+result.innerHTML =
+"🎨 แนะนำ: นิเทศศาสตร์, ออกแบบกราฟิก, ดิจิทัลมีเดีย";
+}
+else if(interest==="technology"){
+result.innerHTML =
+"💻 แนะนำ: วิทยาการคอมพิวเตอร์, AI, วิศวกรรมซอฟต์แวร์";
+}
+else{
+result.innerHTML =
+"⚠️ กรุณาเลือกความสนใจก่อน";
 }
 }
-update();
-counterObserver.unobserve(counter);
-}
-});
-});
-counters.forEach(counter=>{
-counterObserver.observe(counter);
-});
-// Back To Top
-const topBtn=document.getElementById('topBtn');
-window.addEventListener('scroll',()=>{
-if(window.scrollY>300){
-topBtn.style.display='block';
-}else{
-topBtn.style.display='none';
-}
-});
-topBtn.addEventListener('click',()=>{
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
-});
 </script>
+
 </body>
 </html>
